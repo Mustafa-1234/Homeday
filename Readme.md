@@ -13,6 +13,8 @@ In order to run the project, one should follow the following steps:
 	* Grid Layout
 	* Blog Layout
 	* Masonry Layout
+	
+*	I did some changes in news.json. 	
 
 *	In header you will see a select box through which you can select any layout.
 
