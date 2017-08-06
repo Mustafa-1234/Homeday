@@ -1,0 +1,33 @@
+<!--Masonry Page-->
+<div class="row">
+   <div class="centerText responsiveHeading">
+      <h2>Masonry View </h2>
+   </div>
+</div>
+<div class="row" angular-grid="news" angular-grid-id="gallery" ag-refresh-on-img-load="true">
+    <div ng-repeat="ns in news" class="grid border">
+         <!--Tweet & Article Section-->
+         <div ng-if="ns.type !== 'video'" class="thumbnail">
+            <a href="{{ns.url}}" target="_blank"><img ng-src="{{ns.urlToImage ? ns.urlToImage :  'images/404.jpg'}}" style="width: 100%;" data-holder-rendered="true"></a>
+            <div class="caption">
+                <h3>{{ns.title}}</h3>
+                <p>{{ns.description}}</p>
+                <div><b>Author: </b>{{ns.author}}</div>
+                <div><b>Date: </b>{{ns.publishedAt}}</div>
+                <div><b>Time: </b>{{ns.time}}</div>
+            </div>
+         </div>
+         <!--Video Section-->
+         <div ng-if="ns.type == 'video'" class="thumbnail">
+            <a href="{{ns.urlVideo}}" target="_blank"><img ng-src="{{ns.urlToImage ? ns.urlToImage :  'images/404.jpg'}}" style="width: 100%;" data-holder-rendered="true"></a>
+            <div class="caption">
+                <h3>{{ns.title}}</h3>
+                <p>{{ns.description}}</p>
+                <div><b>Author: </b>{{ns.author}}</div>
+                <div><b>Date: </b>{{ns.publishedAt}}</div>
+                <div><b>Time: </b>{{ns.time}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+

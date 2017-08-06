@@ -1,0 +1,57 @@
+<!--Grid Page-->
+<div class="row">
+   <div class="centerText responsiveHeading">
+      <h2>Grid View </h2>
+   </div>
+</div>
+<div class="row">
+</div>
+   <div ng-repeat="ns in news">
+   <!--Tweet Section-->
+      <div ng-if="ns.type == 'tweet'" class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+         <div class="gridBox">
+           <div class="imageBox">
+               <img alt="100%x200" ng-src="{{ns.urlToImage ? ns.urlToImage :  'images/404.jpg'}}" class="test" data-holder-rendered="true"/>
+            </div>
+            <div class="contentBox caption">
+               <h4>{{ns.title}}</h4>
+               <div>{{ns.description}}</div>
+               <div class="gridButtonLeft">
+                  <p><a href="{{ns.url}}" target="_blank" class="btn btn-primary" role="button">Read More</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Artcle Section-->
+      <div ng-if="ns.type == 'article'" class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+         <div class="gridBox">
+            <div class="imageBox">
+               <img alt="100%x200" ng-src="{{ns.urlToImage ? ns.urlToImage :  'images/404.jpg'}}" class="test" data-holder-rendered="true"/>
+            </div>
+            <div class="contentBox caption">
+               <h4>{{ns.title}}</h4>
+               <div>{{ns.description}}</div>
+               <div class="gridButtonLeft">
+                  <p><a href="{{ns.url}}" target="_blank" class="btn btn-primary" role="button">Read More</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--Video Section-->
+      <div ng-if="ns.type == 'video'" class="col-lg-2 col-md-3 col-sm-6 col-xs-12">
+         <div class="gridBox">
+            <div class="imageBoxVideo">  
+               <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" ng-src="{{ns.url | trustUrl}}"></iframe>
+               </div>
+            </div>   
+            <div class="contentBoxVideo caption">
+               <h4>{{ns.title}}</h4>
+               <p>{{ns.description}}</p>
+               <div class="gridButtonLeft">
+                  <p><a href="{{ns.url}}" target="_blank" class="btn btn-primary" role="button">Full Screen</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>

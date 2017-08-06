@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="testApp">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css"> 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="js/angulargrid.min.js"></script>
+    <script src="js/angular-masonry.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body ng-controller="appCtrl">
+
+<div class="container-fluid">
+        <!--Header Content-->
+    <div class="row">
+        <div class="header col-md-12 col-sm col-xs-12">
+            <div class="headerBox">
+                <span>Select View :</span>
+                <select ng-model="template" ng-options="t.name for t in templates" ng-show="!detailView">
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+        <!--Body Content-->
+    <div class="row">
+        <div class="centerBar">
+            <div id="content" class="col-md-12 col-sm col-xs-12" ng-include="template.url" ng-if="!detailView"></div>
+        </div>
+    </div>
+ </div>   
+</body>
+</html>

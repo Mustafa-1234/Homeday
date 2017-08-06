@@ -1,0 +1,61 @@
+<!--Blog Page-->
+<div class="row">   
+   <div class="centerText responsiveHeading">
+      <h2>Blog View</h2>
+   </div>
+</div>
+<div class="container">
+   <div class="row">
+      <div ng-repeat="ns in news">
+      <!--Artcle Section-->
+         <div ng-if="ns.type == 'article'" class="col-md-12 col-sm-12 col-xs-12 thumbnail blogHeight">
+            <div class="imageBoxBlog col-md-3 col-sm-6 col-xs-12">
+              <img class="width100" alt="100%x200" ng-src="{{ns.urlToImage ? ns.urlToImage :  'images/404.jpg'}}" data-holder-rendered="true"/>
+            </div>
+            <div class="caption col-md-9 col-sm-6 col-xs-12">
+               <a href="{{ns.url}}" target="_blank">
+                  <h4>{{ns.title}}</h4>
+               </a>
+               <div>{{ns.description}}</div>
+               <div><b>Author: </b>{{ns.author}}</div>
+               <div><b>Date: </b>{{ns.publishedAt}}</div>
+               <div><b>Time: </b>{{ns.time}}</div>
+               <p><a href="{{ns.url}}" target="_blank" class="btn btn-primary" role="button">Read More</a></p>
+            </div>
+         </div> 
+         <!--Tweet Section-->
+         <div ng-if="ns.type == 'tweet'" class="col-md-12 col-sm-12 col-xs-12 thumbnail blogHeight">
+            <div class="imageBoxBlog col-md-3 col-sm-6 col-xs-12">
+              <img alt="100%x200" ng-src="{{ns.urlToImage ? ns.urlToImage :  'images/404.jpg'}}" class="width100" data-holder-rendered="true"/>
+            </div>
+            <div class="caption col-md-9 col-sm-6 col-xs-12">
+               <a href="{{ns.url}}" target="_blank">
+                  <h4>{{ns.title}}</h4>
+               </a>
+               <div>{{ns.description}}</div>
+               <div><b>Author: </b>{{ns.author}}</div>
+               <div><b>Date: </b>{{ns.publishedAt}}</div>
+               <div><b>Time: </b>{{ns.time}}</div>
+               <p><a href="{{ns.url}}" target="_blank" class="btn btn-primary" role="button">Read More</a></p>
+            </div>
+         </div> 
+         <div ng-if="ns.type == 'video'" class="col-md-12 col-sm-12 col-xs-12 thumbnail blogHeight"> 
+            <!--Video Section-->
+            <div class="imageBoxBlog col-md-3 col-sm-6 col-xs-12">
+                <img class="width100" alt="100%x200" ng-src="{{ns.urlToImage ? ns.urlToImage :  'images/404.jpg'}}" data-holder-rendered="true"/>
+            </div>
+            <div class="col-md-9 col-sm-6 col-xs-12 caption">
+               <a href="{{ns.url}}" target="_blank">
+                  <h4>{{ns.title}}</h4>
+               </a>
+               <div>{{ns.description}}</div>
+               <div><b>Author: </b>{{ns.author}}</div>
+               <div><b>Date: </b>{{ns.publishedAt}}</div>
+               <div><b>Time: </b>{{ns.time}}</div>
+               <p><a href="{{ns.url}}" target="_blank" class="btn btn-primary" role="button">Read More</a></p>
+            </div>
+         </dsiv>
+      </div>   
+   </div>
+</div>
+
